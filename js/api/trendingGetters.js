@@ -1,7 +1,9 @@
 import { baseUrl } from "./config.js";
 
 //const url = 'https://api.themoviedb.org/3/trending/all/day?language=en-US';
-const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+//const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+//const url = 'https://api.themoviedb.org/3/trending/tv/day?language=en-US';
+
 
 const opts = {
     headers: {
@@ -13,7 +15,7 @@ const opts = {
 
 export const getTrending = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + "all/day?language=en-US", opts);
+    const response = await fetch(baseUrl + "/trending/all/day?language=en-US", opts);
 
     const data = await response.json();
 
@@ -30,9 +32,34 @@ export const getTrending = async (baseUrl) => {
 
 export const getTrendingMovie = async (baseUrl) =>{
 
-    const response = await fetch(baseUrl +"movie/day?language=en-US", opts);
+    const response = await fetch(baseUrl +"/trending/movie/day?language=en-US", opts);
 
     const data = await response.json();
 
     return data;
 } 
+
+/**
+ * 
+ * @param baseUrl 
+ * @returns serie tv di tenenza
+ */
+
+export const getTrendingTv = async(baseUrl) =>{
+
+    const response = await fetch(baseUrl +"/trending/tv/day?language=en-US", opts);
+
+    const data = await response.json();
+
+    return data;
+}
+
+export const searchPeople = async(baseUrl, person) =>{
+
+    const response = await fetch(baseUrl +`/search/person?query=${person}`, opts);
+
+    const data = await response.json();
+
+    return data;
+
+}
