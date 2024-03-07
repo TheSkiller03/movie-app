@@ -12,6 +12,7 @@ export const getTrending = async () => {
     const data = await response.json();
 
     return data;
+
 };
 
 
@@ -29,6 +30,7 @@ export const getTrendingMovie = async () =>{
     const data = await response.json();
 
     return data;
+
 } 
 
 /**
@@ -44,6 +46,7 @@ export const getTrendingTv = async() =>{
     const data = await response.json();
 
     return data;
+
 }
 
 export const searchPeople = async(person) =>{
@@ -55,3 +58,15 @@ export const searchPeople = async(person) =>{
     return data;
 
 }
+
+
+/**
+ * Da aggiungere:
+ * id
+ * poster_path
+ * title
+ * vote_average
+ * media_type
+ * release_date
+ */
+
