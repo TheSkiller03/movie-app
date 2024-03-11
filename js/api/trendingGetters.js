@@ -58,15 +58,4 @@ export const searchPeople = async(person) =>{
     return data;
 
 }
-
-
-/**
- * Da aggiungere:
- * id
- * poster_path
- * title
- * vote_average
- * media_type
- * release_date
- */
-
+    

@@ -1,7 +1,12 @@
-/**
- * 
- *  
- */
+export { getTrending, getTrendingMovie, getTrendingTv, searchPeople, } from "./api/trendingGetters.js"
+export { baseUrl,opts } from "./api/config.js";
+export { fixTitle, addParagraph } from "./utiles/dom.js";
+
+
+
+
+
+/*
 
 import { getTrending, getTrendingMovie, getTrendingTv, searchPeople, } from "./api/trendingGetters.js"
 import dotenv from 'dotenv';
@@ -28,15 +33,7 @@ const SeaPeople= searchPeople().then((data) => {
 
 
 
-/**
- * Da aggiungere:
- * id
- * poster_path
- * title
- * vote_average
- * media_type
- * release_date
-*/
+
 
 const Data = getTrending().then((element) => {
    
@@ -50,6 +47,6 @@ const Data = getTrending().then((element) => {
       console.log("\n");
   });
 })
-
+*/
 
 
