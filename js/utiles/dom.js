@@ -5,10 +5,10 @@ export const fixTitle = () => {
     //tag h1 che contiene il titolo
     const titleContent = title.innerHTML; //serve per leggere o scrivere qualcosa dentro al tag h1
 
-    if(titleContent === "Movie App")
+    if(titleContent === "My Favorite Movie List")
         return;
     else{
-        title.innerHTML = "Movie App";
+        title.innerHTML = "My Favorite Movie List";
     }
 }
 

@@ -4,33 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1 id="header">Movie Ap</h1>
-    <p>
-
-    </p>
+    <h1 align="center">My favorite List</h1>
+    <div align="center" id="1">
+        <bottom id="bottom"href="movie.html">Movie List</bottom>
+    </div>
 </body>
 
-<script type="module">
-
-    import { getTrendingMovie,fixTitle, addParagraph } from "./js/index.js";
-    console.log("prova");
-    fixTitle();
-    addParagraph();
-    getTrendingMovie().then((data) => {
-    data.results.forEach((movie) => {
-        console.log('Titolo: ', movie.title);
-        console.log('ID: ', movie.id);
-        console.log('Poster_Path: ', movie.poster_path);
-        console.log('Vote_average: ', movie.vote_average);
-        console.log('Media_type: ', movie.media_type);
-        console.log('Release_date: ', movie.release_date);
-        console.log("\n");
-    });
-});
-</script>
 
 </html>

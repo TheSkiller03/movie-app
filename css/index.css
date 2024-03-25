@@ -1,0 +1,43 @@
+body {
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(38, 48, 54);
+   color: aliceblue;
+ }
+ 
+ nav {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ #bottom{
+   background-color: rgb(38, 48, 54);
+   color: aliceblue;
+   border: 2px solid aliceblue;
+   border-radius: 10px;
+   transition: transform 0.5s;
+   margin-right: 20px;
+ }
+ #bottom:hover{
+  transform: scale(1.1);
+ }
+ 
+ #movieCards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+ }
+ 
+ .movieCards {
+   flex-basis: calc(20% - 20px); /* Imposta la larghezza di ogni card a un quinto dello spazio disponibile, sottraendo un po' di spazio per il padding */
+   margin: 10px;
+   padding: 10px;
+   background-color: rgb(38, 48, 54);
+   color: aliceblue;
+   border: 2px solid aliceblue;
+   border-radius: 10px;
+ }
+ 
+
+

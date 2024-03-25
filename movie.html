@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1 id="header">My Favorite Movie List</h1>
+        <button id="loadtv">Load Tv Series</button>
+    </nav>
+    
+    <div id="movieCards"></div>
+
+</body>
+
+<script type="module">
+
+    import { getTrendingMovie, fixTitle, addParagraph, createTrendingMovieList, getTrendingTv, searchPeople, containerCartd } from "./js/index.js";
+    console.log("prova");
+    fixTitle();
+    const trendingMovie = await getTrendingMovie();
+    //createTrendingMovieList(trendingMovie);
+    console.log(getTrendingMovie);
+    containerCartd(trendingMovie);
+</script>
+</html>
