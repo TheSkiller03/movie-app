@@ -43,7 +43,7 @@ export const containerCartd = (element) =>
         description.innerHTML = element.overview;
 
         textContainer.appendChild(title);
-        card.appendChild(image); // Aggiungi l'elemento immagine, non image.src
+        card.appendChild(image); 
         textContainer.appendChild(description);
         card.appendChild(textContainer);
         card.classList.add("movieCards");
@@ -64,14 +64,14 @@ export const containerTv = (element) =>
         image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;    
         image.alt= "poster";
 
-        const title = document.createElement("h1");
-        title.innerText = element.title;
+        const name = document.createElement("h1");
+        name.innerText = element.name;
 
         const description = document.createElement("p");
         description.innerHTML = element.overview;
 
-        textContainer.appendChild(title);
-        card.appendChild(image); // Aggiungi l'elemento immagine, non image.src
+        textContainer.appendChild(name);
+        card.appendChild(image); 
         textContainer.appendChild(description);
         card.appendChild(textContainer);
         card.classList.add("tvCards");
@@ -79,12 +79,5 @@ export const containerTv = (element) =>
     });
 }
 
-document.getElementById('loadtv').addEventListener('click', function() {
 
-    document.getElementById('movieCards').innerHTML = '';
-    
-    const tvData = getTrendingTv();
   
-
-    containerTv(tvData);
-  });

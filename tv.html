@@ -16,7 +16,7 @@
 
 <body>
     <nav>
-        <h1 id="header">My favorite Movie Tv List</h1>
+        <h1 id="header">My favorite Serie Tv List</h1>
     <div id="navButton">
         <button id="button">
             <a href="./index.html">Main List</a>
@@ -30,19 +30,19 @@
     </div>
     </nav>
 
-    <div id="movieCards"></div>
+    <div id="tvCards"></div>
 
 </body>
 
 <script type="module">
 
-    import { getTrendingMovie, fixTitle, addParagraph, createTrendingMovieList, getTrendingTv, searchPeople, containerCartd } from "./js/index.js";
+    import { getTrendingMovie, fixTitle, addParagraph, createTrendingMovieList, getTrendingTv, searchPeople, containerCartd,containerTv} from "./js/index.js";
     console.log("prova");
     fixTitle();
-    const trendingMovie = await getTrendingMovie();
+    const trendingTv = await getTrendingTv();
     //createTrendingMovieList(trendingMovie);
-    console.log(getTrendingMovie);
-    containerCartd(trendingMovie);
+    console.log(getTrendingTv);
+    containerTv(trendingTv);
 </script>
 
 

@@ -11,16 +11,32 @@ body {
    justify-content: space-between;
    align-items: center;
  }
- #bottom{
+ #loadtv{
    background-color: rgb(38, 48, 54);
    color: aliceblue;
    border: 2px solid aliceblue;
    border-radius: 10px;
    transition: transform 0.5s;
    margin-right: 20px;
+   position: relative;
  }
- #bottom:hover{
+ #loadtv:hover{
   transform: scale(1.1);
+ }
+
+ #tvCards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ }
+ .tvCards{
+  flex-basis: calc(20% - 20px); /* Imposta la larghezza di ogni card a un quinto dello spazio disponibile, sottraendo un po' di spazio per il padding */
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(38, 48, 54);
+  color: aliceblue;
+  border: 2px solid aliceblue;
+  border-radius: 10px;
  }
  
  #movieCards {
@@ -38,6 +54,35 @@ body {
    border: 2px solid aliceblue;
    border-radius: 10px;
  }
+ a{
+  text-decoration: none;
+  color:aliceblue
+ }
  
+ 
+ #button{
+  background-color: rgb(38, 48, 54);
+  color: aliceblue;
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+  transition: transform 0.5s;
+  margin-right: 20px;
+}
+#button:hover{
+  transform: scale(1.1);
+}
+i{
+  color: aliceblue;
+}
 
+
+
+#navButton {
+  margin-right: 700px;
+  display: flex;
+  flex-direction: row;
+}
+#navButton button{
+  flex-grow: 1;
+}
 
