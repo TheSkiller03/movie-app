@@ -1,7 +1,7 @@
 export { getTrending, getTrendingMovie, getTrendingTv, searchPeople} from "./api/trendingGetters.js"
 export { baseUrl,opts } from "./api/config.js";
 export { fixTitle, addParagraph } from "./utiles/dom.js";
-export { createTrendingMovieList, containerCartd,containerTv} from "./domManipulator/createList.js";
+export { createTrendingMovieList, containerCartd,containerTv,containerAll} from "./domManipulator/createList.js";
 
 
 

@@ -23,7 +23,7 @@ export const createTrendingMovieList = (element) => {
     });
 }
 
-export const containerCartd = (element) => 
+/*export const containerCartd = (element) => 
 {
     const cards = document.getElementById("movieCards");
     element.results.forEach((element) => 
@@ -42,27 +42,60 @@ export const containerCartd = (element) =>
         const description = document.createElement("p");
         description.innerHTML = element.overview;
 
-        textContainer.appendChild(title);
+        //textContainer.appendChild(title);
         card.appendChild(image); 
-        textContainer.appendChild(description);
+        //textContainer.appendChild(description);
         card.appendChild(textContainer);
         card.classList.add("movieCards");
         cards.appendChild(card);
     });
+}*/
+
+export const containerCartd = (element) => {
+    const cards = document.getElementById("movieCards");
+    element.results.forEach((element) => {
+        const card = document.createElement("div");
+
+        const textContainer = document.createElement("div");
+        textContainer.style.display = "none"; // Nascondi il contenitore del testo inizialmente
+
+        const image = document.createElement("img");
+        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;
+        image.alt = "poster";
+        image.style.cursor = "pointer"; // Cambia il cursore a una mano quando passi sopra l'immagine
+
+        const title = document.createElement("h1");
+        title.innerText = element.title;
+
+        const description = document.createElement("p");
+        description.innerHTML = element.overview;
+
+        textContainer.appendChild(title);
+        textContainer.appendChild(description);
+        card.appendChild(image);
+        card.appendChild(textContainer);
+        card.classList.add("movieCards");
+        cards.appendChild(card);
+
+        // Aggiungi un gestore di eventi di click all'immagine
+        image.addEventListener("click", () => {
+            // Mostra o nascondi il contenitore del testo quando l'immagine viene cliccata
+            textContainer.style.display = textContainer.style.display === "none" ? "block" : "none";
+        });
+    });
 }
 
-export const containerTv = (element) => 
-{
+
+export const containerTv = (element) => {
     const cards = document.getElementById("tvCards");
-    element.results.forEach((element) => 
-    {
+    element.results.forEach((element) => {
         const card = document.createElement("div");
 
         const textContainer = document.createElement("div");
 
         const image = document.createElement("img");
-        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;    
-        image.alt= "poster";
+        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;
+        image.alt = "poster";
 
         const name = document.createElement("h1");
         name.innerText = element.name;
@@ -71,7 +104,7 @@ export const containerTv = (element) =>
         description.innerHTML = element.overview;
 
         textContainer.appendChild(name);
-        card.appendChild(image); 
+        card.appendChild(image);
         textContainer.appendChild(description);
         card.appendChild(textContainer);
         card.classList.add("tvCards");
@@ -80,4 +113,30 @@ export const containerTv = (element) =>
 }
 
 
-  
+
+
+export const containerAll = (element) => {
+    const cards = document.getElementById("allCards");
+    element.results.forEach((element) => {
+        const card = document.createElement("div");
+
+        const textContainer = document.createElement("div");
+
+        const image = document.createElement("img");
+        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;
+        image.alt = "poster";
+
+        const title = document.createElement("h1");
+        title.innerText = type === 'movie' ? element.title : element.name;
+
+        const description = document.createElement("p");
+        description.innerHTML = element.overview;
+
+        textContainer.appendChild(name);
+        card.appendChild(image);
+        textContainer.appendChild(description);
+        card.appendChild(textContainer);
+        card.classList.add("allCards");
+        cards.appendChild(card);
+    });
+}

@@ -4,13 +4,7 @@ body {
    background-color: rgb(38, 48, 54);
    color: aliceblue;
  }
- 
- nav {
-   width: 100%;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
- }
+ /*****************************************************************************/
  #loadtv{
    background-color: rgb(38, 48, 54);
    color: aliceblue;
@@ -30,15 +24,46 @@ body {
   justify-content: space-around;
  }
  .tvCards{
-  flex-basis: calc(20% - 20px); /* Imposta la larghezza di ogni card a un quinto dello spazio disponibile, sottraendo un po' di spazio per il padding */
+  flex-basis: calc(30% - 30px); /* Imposta la larghezza di ogni card a un quinto dello spazio disponibile, sottraendo un po' di spazio per il padding */
   margin: 10px;
   padding: 10px;
   background-color: rgb(38, 48, 54);
   color: aliceblue;
   border: 2px solid aliceblue;
   border-radius: 10px;
+  position: relative; /* Aggiunto per posizionare assolutamente gli elementi figli */
+  overflow: hidden; /* Aggiunto per nascondere il contenuto che esce dai bordi della card */
  }
- 
+
+ .tvCards img, .tvCards .textContainer {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s;
+}
+
+.tvCards img {
+  height: auto; /* Aggiunto per mantenere il rapporto di aspetto originale dell'immagine */
+}
+
+.tvCards .textContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+  opacity: 0; /* Inizialmente nascosto */
+}
+
+.tvCards:hover img {
+  opacity: 0; /* Nasconde l'immagine quando si passa il mouse sulla card */
+}
+
+.tvCards:hover .textContainer {
+  opacity: 1; /* Mostra il contenitore del testo quando si passa il mouse sulla card */
+}
+ /**************************************************************************************/
  #movieCards {
    display: flex;
    flex-wrap: wrap;
@@ -54,12 +79,16 @@ body {
    border: 2px solid aliceblue;
    border-radius: 10px;
  }
+
  a{
   text-decoration: none;
   color:aliceblue
  }
  
- 
+ #h1{
+  margin-left:10px;
+ }
+ /******************************************************************************/
  #button{
   background-color: rgb(38, 48, 54);
   color: aliceblue;
@@ -71,18 +100,45 @@ body {
 #button:hover{
   transform: scale(1.1);
 }
+
+#navButton button.current {
+  background-color: aliceblue; /* Cambia il colore di sfondo del pulsante corrente */
+  color: rgb(38, 48, 54); /* Cambia il colore del testo del pulsante corrente */
+}
+
 i{
   color: aliceblue;
 }
 
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
+#navButton button:first-child {
+  margin-left: 20px; /* Aumenta questo valore per aggiungere più spazio */
+}
+
+#navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#navContainer h1 {
+  margin-left: 100px; /* Spazio tra il titolo e i pulsanti */
+}
 
 #navButton {
-  margin-right: 700px;
   display: flex;
   flex-direction: row;
 }
-#navButton button{
+
+#navButton button {
   flex-grow: 1;
 }
+/****************************************************************************/
+
+
 

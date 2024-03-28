@@ -17,8 +17,11 @@
 
 <body>
     <nav>
-        <h1 id="h1">My favorite List</h1>
+        <h1 id="header">My favorite List</h1>
     <div id="navButton">
+        <button id="button">
+            <a href="./index.html">Main List</a>
+        </button>
         <button id="button">
             <a href="./movie.html">Movie List</a>
         </button>
@@ -27,8 +30,20 @@
         </button>
     </div>
     </nav>
+
+    <div id="allCards"></div>
+
     
 </body>
+
+<script type="module">
+
+    import { containerAll,getTrending} from "./js/index.js";
+    console.log("prova");
+    fixTitle();
+    const trandingAll = await getTrending();
+    containerAll(trandingAll);
+</script>
 
 
 </html>

@@ -55,3 +55,74 @@
   window.onload = function() {
     document.getElementById('loadtv').addEventListener('click', toggleMenu);
   };
+
+
+
+
+
+  /*const createCard = (element, type) => {
+    const cards = document.getElementById(type === 'movie' ? "movieCards" : "tvCards");
+    element.results.forEach((element) => {
+        const card = document.createElement("div");
+
+        const textContainer = document.createElement("div");
+
+        const image = document.createElement("img");
+        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;    
+        image.alt= "poster";
+
+        const title = document.createElement("h1");
+        title.innerText = type === 'movie' ? element.title : element.name;
+
+        const description = document.createElement("p");
+        description.innerHTML = element.overview;
+
+        textContainer.appendChild(title);
+        card.appendChild(image); 
+        textContainer.appendChild(description);
+        card.appendChild(textContainer);
+        card.classList.add(type === 'movie' ? "movieCards" : "tvCards");
+        cards.appendChild(card);
+    });
+}
+
+export const containerCard = (movies, tvShows) => {
+    // Prendi 10 film e 10 serie TV in modo casuale
+    const randomMovies = movies.sort(() => 0.5 - Math.random()).slice(0, 10);
+    const randomTvShows = tvShows.sort(() => 0.5 - Math.random()).slice(0, 10);
+
+    // Crea le card per i film e le serie TV
+    createCard(randomMovies, 'movie');
+    createCard(randomTvShows, 'tv');
+}*/
+
+export const containerCard = (element, type) => {
+    const cards = document.getElementById("cardsContainer"); // ID unico per il div
+    const card = document.createElement("div");
+
+    const textContainer = document.createElement("div");
+
+    const image = document.createElement("img");
+    image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;    
+    image.alt= "poster";
+
+    const title = document.createElement("h1");
+    title.innerText = type === 'movie' ? element.title : element.name;
+
+    const description = document.createElement("p");
+    description.innerHTML = element.overview;
+
+    textContainer.appendChild(title);
+    card.appendChild(image); 
+    textContainer.appendChild(description);
+    card.appendChild(textContainer);
+    card.classList.add(type === 'movie' ? "movieCards" : "tvCards");
+    cards.appendChild(card);
+}
+
+// Usa la funzione per un singolo film e una singola serie TV
+//containerCard(movie, 'movie');
+//containerCard(tvShow, 'tv');
+
+
+  
