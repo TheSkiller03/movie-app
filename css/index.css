@@ -140,5 +140,18 @@ nav {
 }
 /****************************************************************************/
 
+@media (max-width: 768px) {
+  .tvCards {
+    flex-basis: calc(50% - 20px);
+    /* ...altre proprietà... */
+  }
+}
 
+/* Stili per smartphone */
+@media (max-width: 480px) {
+  .tvCards {
+    flex-basis: calc(100% - 20px);
+    /* ...altre proprietà... */
+  }
+}
 
